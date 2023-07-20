@@ -30,8 +30,9 @@ let urun5 = {
 
 let urunler = [urun1,urun2,urun3,urun4,urun5];
 let filtreliUrunler = [];
+//Filtrelenen ürünler buraya push metodu ile aktarılır.
 let kullaniciGirilen = prompt("Aramak istediğiniz markayı girin");
-
+//Kullanıcıdan bir marka girmesi istenir.
 filtreliUrunleriDoldur(urunler);
 
 filtreliUrunleriYazdir(filtreliUrunler)
@@ -39,7 +40,9 @@ filtreliUrunleriYazdir(filtreliUrunler)
 function filtreliUrunleriDoldur(urunler){
     urunler.forEach(function(urun){
         if(urun.isim.toUpperCase().includes(kullaniciGirilen.toUpperCase(),0)){
+            //Kullanıcının girdiği isim urun.isim in içinde varsa
             filtreliUrunler.push(urun);
+            //push metodu ile filtreliUrunler e aktar.
         }
     })
 }
@@ -48,5 +51,6 @@ function filtreliUrunleriYazdir(urunler){
     urunler.forEach(function(urun){
         console.log(urun.isim + "|" + urun.kategori + "|" + urun.fiyat);
         console.log("-------------------------------")
+        //filtrelenen ürünleri tek tek ekrana yazdır.
     })
 }
